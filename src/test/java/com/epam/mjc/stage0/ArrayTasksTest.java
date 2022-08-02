@@ -2,6 +2,7 @@ package com.epam.mjc.stage0;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -52,12 +53,14 @@ public class ArrayTasksTest {
                 "I think, you have mistake in order or name of season");
     }
 
+
     @ParameterizedTest
     @MethodSource("generatedNumbersTestProvider")
     public void generateNumbersTests(int length, int[] expectedArr) {
         assertArrayEquals(expectedArr, arrayTasks.generateNumbers(length),
                 "I think, something went wrong with number generation implementation");
     }
+
 
     @ParameterizedTest
     @MethodSource("reverseArrayTestProvider")
@@ -73,6 +76,7 @@ public class ArrayTasksTest {
                 "I think, something went wrong with total sum implementation");
     }
 
+
     @ParameterizedTest
     @MethodSource("findIndexOfNumberTestProvider")
     public void findIndexOfNumberTest(int[] arr, int number, int expectedIndex) {
@@ -80,11 +84,13 @@ public class ArrayTasksTest {
                 "I think, something went wrong with finding index implementation");
     }
 
+
     @ParameterizedTest
     @MethodSource("getOnlyPositiveNumbersTestProvider")
     public void getOnlyPositiveNumbersTest(int[] arr, int[] expectedArr) {
         assertArrayEquals(expectedArr, arrayTasks.getOnlyPositiveNumbers(arr));
     }
+
 
     @ParameterizedTest
     @MethodSource("sortRaggedArrayProvider")
